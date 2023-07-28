@@ -1,0 +1,300 @@
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>快乐每一天 (゜-゜)つロ 干杯~</title>
+	<style type="text/css">
+html,body {margin:0;padding:0;height:100%;overflow:hidden;}
+.pc {display:none;height:100%;background:black url("images/02.jpg");background-repeat:no-repeat;}
+.video {position:absolute;top:50%;transform:translateY(-50%);width:100%;overflow:hidden;z-index:1;object-fit:fill}
+.logo {position:absolute;top:20px;left:20px;z-index:3}
+.logo img {display:block;}
+.content {position:absolute;top:50%;left:50%;width:100%;transform:translate(-50%,-30%);text-align:center;z-index:2}
+.pcText {margin:auto;}
+.pcText img {width:864px;display:block;margin:auto;}
+.pcButton {margin:40px auto}
+.pcButton img {margin-left:30px}
+.box1,.box2 {display:inline-block;position:relative;background:white;margin:0 90px;width:200px;height:200px;opacity:0}
+#qrcode1,#qrcode2 {margin:36px 36px}
+a {display:block;}
+
+	</style>
+	<style>
+.mobile {height:100%;display:none;background:url("images/01.jpg");background-size:cover;overflow:hidden}
+.mobile .video {height:100%;z-index:0}
+.mcontent {position:absolute;top:50%;left:50%;width:100%;transform:translate(-50%,-55%);text-align:center;z-index:5;}
+.mlogo img {width:40%;display:block;margin:auto;}
+.mText {margin:60px 0 90px}
+.mText img {width:80%;display:block;margin:auto;}
+.mbtn img {width:50%;}
+.mbtn a {margin-top:14px;}
+.mbtn .ioslink {display:none;}
+.mbtn .andlink {display:none;}
+.tips {display:none;position:absolute;bottom:70px;width:100%;text-align:center;color:white;font-size:20px;z-index:5;}
+.tx {display: block;position:absolute;bottom:10px;width:100%;text-align:center;color:white;font-size:10px;z-index:5;}
+.jc {display:none;position:absolute;left:0;right:0;top:0;bottom:0;z-index:99;color:white;background-color:#272727}
+.jc {text-align:center;padding:75px 0}
+.jc img {width:95%}
+.close {position:absolute;top:0;right:20px;font-size:50px;transform:rotate(45deg)}
+.mobile.fixed-bg {position:absolute;left:0;top:0;width:100%;height:100%;background-size:100%auto;background-position:center;z-index:1;overflow:hidden}
+.fixed-bg div {position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;transition:1.5s opacity}
+	</style>
+	<script src="js/ytdown.js"></script>
+</head>
+
+<body>
+	<div class="pc">
+		<div class="logo">
+			<img src="images/logo.png">
+		</div>
+		<div class="content">
+			<div class="pcText">
+				<img src="images/pcText1_01.png">
+				<img src="images/pcText1_02.png">
+				<img src="images/pcText1_03.png">
+			</div>
+			<div class="pcButton">
+				<img class="btn1" src="images/and.png">
+				<img class="btn2" src="images/ios.png">
+			</div>
+			<div class="box1">
+				<div id="qrcode1"></div>
+			</div>
+			<div class="box2">
+				<div id="qrcode2"></div>
+			</div>
+		</div>
+	</div>
+	<div class="mobile">
+		<div class="fixed-bg">
+			<div style="opacity: 1;">
+				<img id="pic1" src="images/01.jpg" width="100%" height="100%">
+			</div>
+			<div style="opacity: 0;">
+				<img id="pic1" src="images/02.jpg" width="100%" height="100%">
+			</div>
+			<div style="opacity: 0;">
+				<img id="pic1" src="images/03.jpg" width="100%" height="100%">
+			</div>
+			<div style="opacity: 0;">
+				<img id="pic1" src="images/04.jpg" width="100%" height="100%">
+			</div>
+			<div style="opacity: 0;">
+				<img id="pic1" src="images/05.jpg" width="100%" height="100%">
+			</div>
+		</div>
+		<div class="mcontent">
+			<div class="mlogo">
+				<img src="images/logo.png">
+			</div>
+			<div class="mText">
+				<img src="images/mText_01.png">
+				<img src="images/mText_02.png">
+				<img src="images/mText_03.png">
+				<img src="images/mText_04.png">
+			</div>
+			<div class="mbtn">
+				<a class="andlink" href="#"><img class="mand"
+						src="images/mand.png"></a>
+				<a class="ioslink" href="#"><img class="mios"
+						src="images/mios.png"></a>
+			</div>
+		</div>
+	
+		<div class="tips">
+			<p>安装教程</p>
+		</div>
+		<div class="jc">
+			<div class="close">+</div>
+			<div class="antips">
+				<h1>Q：安卓安装教程</h1>
+				<img src="images/andtips.jpg">
+			</div>
+		</div>
+			<div class="tx">
+			<p>因为App中含有成人内容，所以安装过程中会出现“恶意软件”或“病毒软件”的提示，我们App有稳定的运营收入，绝不会放置病毒或有其他任何恶意行为，请放心使用</p>
+		</div>
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/qrcode.js"></script>
+	<script src="js/OpenInstall-v5.19.js"></script>
+	<script type="text/javascript">
+		var qrcode1 = new QRCode("qrcode1", {
+			text: window.location.href,
+			width: 128,
+			height: 128,
+			colorDark: "#000000",
+			colorLight: "#ffffff",
+			correctLevel: QRCode.CorrectLevel.H
+		});
+		var qrcode2 = new QRCode("qrcode2", {
+			text: window.location.href,
+			width: 128,
+			height: 128,
+			colorDark: "#000000",
+			colorLight: "#ffffff",
+			correctLevel: QRCode.CorrectLevel.H
+		});
+		$(".btn1").mouseenter(function () {
+			$(".box1").css("opacity", "1")
+		})
+		$(".btn1").mouseleave(function () {
+			$(".box1").css("opacity", "0")
+		})
+		$(".btn2").mouseenter(function () {
+			$(".box2").css("opacity", "1")
+		})
+		$(".btn2").mouseleave(function () {
+			$(".box2").css("opacity", "0")
+		})
+		function load() {
+			var bodyW = $("body").width();
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+			if (bodyW < 1025) {
+				$(".pc").css("display", "none");
+				$(".mobile").css("display", "block");
+				if (isiOS) {
+					$('.ioslink').show();
+				}
+				if (isAndroid) {
+					$('.andlink').show();
+					$('.tips').show();
+				}
+				if (!isiOS && !isAndroid) {
+					$('.andlink').show();
+					$('.tips').show();
+					$('.ioslink').show();
+				}
+			} else {
+				$(".pc").css("display", "block");
+				$(".mobile").css("display", "none");
+			}
+		}
+		$(".tips").click(function () {
+			$(".jc").slideDown(100);
+		})
+		$(".close").click(function () {
+			$(".jc").slideUp(100);
+		})
+		load();
+		window.onresize = load;
+		// 序列帧动画
+		var bgSlides = $('.fixed-bg div');
+		var img_numbers = bgSlides.length;
+		var img_page = 0;
+		setInterval(function () {
+			img_page = (++img_page) % img_numbers;
+			bgSlides.each(function (index) {
+				if (index === img_page) {
+					$(this).css('opacity', 1);
+				} else {
+					$(this).css('opacity', 0);
+				}
+			})
+		}, 3000);
+	</script>
+	<script type="text/javascript">
+		function getQueryStringu(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r == null || r == "" || r == "undefined" || r == undefined) {
+				return null;
+			} return unescape(trim(r[2]));
+		}
+		function trim(str) {
+			return str.replace(/(%20)|(\D*)/g, "");
+		}
+		var cm_code = getQueryStringu("iv");//传参
+		if (cm_code == null) {
+			cm_code = '10001';
+		}
+		if (typeof cm_code == 'undefined') {
+			cm_code = "10001";
+		}
+		function getLinkByCode(cm_code) {
+			switch(cm_code){
+case "10091":
+	var rrr = Math.floor(Math.random()*100) + 1;
+	var today = new Date().getDay();
+	var randomNum = 4;
+	if( today == 6 || today == 0){
+		randomNum = 7;
+	}
+	console.log(randomNum);
+	if(rrr < randomNum){
+		cm_app_link.an_yk_link = cm_app_link.an_link;
+	  cm_app_link.pao_ios_link = cm_app_link.pao_ios_zc_link;
+  }
+  break;
+	}
+}
+	getLinkByCode(cm_code);
+</script>
+
+<script>
+	function copyText2(text) {
+	var input = document.createElement('input');
+	input.setAttribute('id', 'input_for_copyText');
+	input.value = text;
+	document.getElementsByTagName('body')[0].appendChild(input);
+	document.getElementById('input_for_copyText').select();
+	document.execCommand('copy');
+	document.getElementById('input_for_copyText').remove();
+}
+		//download
+		$(function () {
+			var makeSureDownload = setInterval(function () {
+				if ("undefined" != typeof cm_app_link) {
+					clearInterval(makeSureDownload);
+					console.log(cm_code);
+					var data = OpenInstall.parseUrlParams();
+					new OpenInstall({
+						appKey: "aeotb3",
+						channelCode: cm_code,
+						apk: cm_app_link.an_yk_link,
+						ios: cm_app_link.pao_ios_link,
+						onready: function () {
+							var m = this;
+							$('.mbtn').on('click', function () {
+								m.wakeupOrInstall();
+								copyText2("code"+cm_code);
+								return false;
+							})
+							// window.setTimeout(function () {
+							// 	$('.mbtn').click();
+							// }, 5000);
+						}
+					}, data);
+				}
+			}, 1000);
+		});
+	</script>
+
+	<!-- ting -->
+	<script>
+		var checkLinkFile = setInterval(function () {
+			if ("undefined" == typeof cm_app_link) {
+				console.log('downlink error');
+				var dxjappTingJs = document.createElement('script')
+				dxjappTingJs.type = 'text/javascript'
+				dxjappTingJs.async = true
+				dxjappTingJs.src = 'js/ytdown.js?s=' + new Date().getTime()
+				var rootTingJs = document.getElementsByTagName('script')[0]
+				rootTingJs.parentNode.insertBefore(dxjappTingJs, rootTingJs)
+			} else {
+				$('title').html("女神Anglebaby等你加入");
+				getLinkByCode(cm_code);
+				$('a.andlink').attr('href', cm_app_link.an_yk_link);
+				$('a.ioslink').attr('href', cm_app_link.pao_ios_link);
+				clearInterval(checkLinkFile);
+			}
+		}, 1000);
+	</script>
+
+<div class="main-content w1240"style="display:none;"><div class="path-search"data-sudaclick="cnav_breadcrumbs_p"><div class="path"><h1 class="channel-logo"><span>新闻中心</span></h1><div class="channel-path"data-sudaclick="cnav_breadcrumbs_p">国内新闻<span class="spliter">&gt;</span><span>正文</span></div></div><div class="search ent-search"id='ent_search'data-sudaclick="cnav_search_p"><form action="https://search.sina.com.cn/"name="cheadSearchForm"id="all_search"method="get"target="_blank"style="position: relative;"><select name="c"id="search_type"style="visibility: hidden;"><option value="news">新闻</option><option value="img">图片</option><option value="blog">博客</option><option value="video">视频</option></select><input type="hidden"name="ie"value="utf-8"><div class="search_div"><input type="text"id="search_input"name="q"value="请输入关键词"onfocus="if(this.value == '请输入关键词') this.value = ''"onblur="if(this.value =='') this.value = '请输入关键词'"autocomplete="off"><input type="submit"id="search_submit"value=""></div></form></div></div><!--面包削search end--><h1 class="main-title">在十九届中央纪委二次全会上重要讲话引世界关注</h1><!--page-tools start--><style type="text/css">.top-bar-inner.second-title{font-size:18px;width:600px}@media screen and(min-width:768px)and(max-width:1480px){.top-bar-inner.second-title{width:400px}.centerdiv{position:absolute;left:50%;top:50%;margin-top:-170px;margin-left:-170px}}</style><div class='top-bar-wrap'id='top_bar_wrap'><div class="top-bar ani"id='top_bar'><div class="top-bar-inner clearfix"><div class="second-title">在十九届中央纪委二次全会上重要讲话引世界关注</div><div class="date-source"data-sudaclick="share_1-0"><span class="date">2018年01月13日20:21</span></div><div class="page-tools"><span class="tool-icon tool-des-fs first"data-sudaclick="content_smallerfont_i"><a ani-click='scaleDes'node-type='decrease-fs'href="javascript:;"title="缩小字体"class="ani">缩小字体</a></span><span class="tool-icon tool-ins-fs"data-sudaclick="content_biggerfont_i"><a ani-click="scaleIns"ani-hover="bounceFromTop"node-type="increase-fs"href="javascript:;"title="放大字体">放大字体</a></span><span class="tool-icon tool-fav"data-sudaclick="content_fav_p"><a ani-hover='bounceFromTop'node-type='add-fav'href="javascript:;"title="收藏本页">收藏</a></span><span class="tool-icon tool-wb"data-sudaclick="content_weiboshare_i"><a ani-hover='bounceFromTop'node-type='share-wb'href="javascript:;"data-share='weibo'title="分享到微博">微博</a></span><span class="tool-icon tool-wx"data-sudaclick="content_wechatshare_i"><a ani-hover='bounceFromTop'node-type='share-wx'href="javascript:;"data-share='weixin'title="分享到微信">微信</a></span><span class="tool-icon tool-share"><a ani-hover='bounceFromTop'node-type='share-more'data-action="dropdown"data-target='share_more'href="javascript:;"title="更多分享">分享</a></span><span class="tool-cmt"><span class="icon-comment"></span><span class="num"node-type='comment-num'>0</span></span><div class='share-more-list'style='display:none;'id='share_more'><span class='tool-share-qq'data-sudaclick="content_qqshare_i"><a href="javascript:;"data-share='qq'title="分享到QQ"><i class="qq"></i>腾讯QQ</a></span><span class='tool-share-qqzone'data-sudaclick="content_qzoneshare_i"><a href="javascript:;"data-share='qzone'title="分享到QQ空间"><i class="qzone"></i>QQ空间</a></span></div></div></div></div></div><!--page-tools end--><!--正文start--><div class="article-content clearfix"id='article_content'><!--左侧start--><div class="article-content-left"><!--引文start--><!--引文end--><!--正文start--><div class="article"id="article"><p>新华社北京１月１３日电综述：为各国政党树立榜样——总书记在十九届中央纪委二次全会上的重要讲话引发世界关注</p><p>新华社记者</p><p>中共中央总书记、国家主席、中央军委主席１１日在十九届中央纪委二次全会上发表重要讲话，强调以永远在路上的执着把全面从严治党引向深入，开创全面从严治党新局面。</p><p>两天来，海外专家学者持续关注的重要讲话。他们认为，中国共产党全面从严治党成绩斐然，为各国政党在治国理政方面树立榜样。</p><p><strong>全面从严治党中共执着精神令人肃然起敬</strong></p><p>指出，党的十八大后，我们紧紧盯住全面从严治党不力这个症结，坚持发扬我们党历史上行之有效的好经验好做法，深化对管党治党规律的认识、创造新的经验，全面从严治党成效卓著。</p><p>越南亚太经济中心主任武大略关注了的重要讲话。他说，近年来，中共全面从严治党、强势反腐，“打虎拍蝇”、坚决惩处“大老虎”，这些新闻曾占据了越南等国家的媒体头条，引起广泛关注。他认为，这些反腐行动起到镜鉴作用，令一些共产党人“正衣冠”，反思和纠正自身行为，还对意欲贪腐者起到震慑作用。</p><p>意大利著名国际问题专家姜·埃·瓦洛里表示，近几年，中共的反腐败斗争达到了前所未有的高度，除了加大打击腐败力度，中共还不断加强完善党的纪检监察机构。</p><p>阿根廷执政党共和国方案党全国执委会委员格拉迪斯·冈萨雷斯上月参加了在北京举行的中国共产党与世界政党高层对话会，“我在北京深刻体会到中共全面从严治党的决心，中共的这些举措，赢得了人民的掌声”。</p><p>埃及中国问题专家阿德尔·萨布里注意到，年轻党员人数不断增加，为中共注入新鲜血液，党员干部流动性增强杜绝“圈子”文化的形成，这都有助于全面从严治党走向深入。</p><p><strong>全面从严治党中共构筑更佳发展环境</strong></p><p>强调，党的建设新的伟大工程，是引领伟大斗争、伟大事业、最终实现伟大梦想的根本保证。</p><p>古巴国际政治研究中心学者何塞·罗瓦伊纳认为，中国在全面建成小康社会、全面建设社会主义现代化国家的道路上努力前进，中共全面从严治党、惩治腐败，才能确保实现这些目标。全面从严治党，体现了中共的战略智慧。</p><p>俄罗斯高等经济学院东方学教研室主任阿列克谢·马斯洛夫指出，中共提出全面从严治党，再次强调党的光荣革命传统，将党纪的重要性提升到新高度。中共开展的反腐败斗争充满决心、丝毫没有畏首畏尾，拥有明确计划和机制。他相信，中共十九大后，反腐斗争将持续走向深入。</p><p>在讲话中提出“确保党和人民赋予的权力不被滥用、惩恶扬善的利剑永不蒙尘”，泰国前总理、民主党主席阿披实对此印象深刻。他说，这句话表明，中国共产党真心为人民服务，保护人民利益。</p><p>泰国国家发展行政学院国际问题专家李仁良认为，中共通过惩治腐败等举措，加强全面从严治党，真正体现党为人民服务的宗旨，体现了中共的凝聚力、感召力，中国人民无疑将更加拥护中共的领导。</p><p>“一个有着强大纪律性的政党，可以更好地团结全国人民，为落实国家发展方略创造最佳环境。”肯尼亚肯雅塔大学讲师肯·奥戈博指出。</p><p><strong>全面从严治党中共为各国政党树立榜样</strong></p><p>强调，在中国特色社会主义新时代，完成伟大事业必须靠党的领导，党一定要有新气象新作为。</p><p>塞尔维亚国际政治经济研究院研究员、“一带一路”地区研究中心主任拉杰瓦茨认为，中国共产党对党组织进行有效管理，锐意推动国家经济、社会发展，各国政党无论其自身定位如何，都可以在这些方面向中共学习。</p><p>曾在中国留学、担任驻华记者和外交官的古巴“中国通”罗瓦伊纳说：“在古巴，我们关注中国共产党领导层和党员坚守党纪的各种努力。我们希望能分享中共全面从严治党的成功经验。”</p><p>肯尼亚执政党朱比利党秘书长拉斐尔·图朱说：“朱比利党正在努力推进肯尼亚经济和社会发展，达成这些目标，必须进行大规模反腐。我们要学习中共坚定不移推进反腐败的做法，期待我们与中共在党建方面有更多交往。”</p><p>老挝巴特寮通讯社社长顺通说，中共全面从严治党，培养党员队伍过硬的政治素质，这样的经验为各国政党树立了良好榜样。</p><p>巴勒斯坦民族解放运动（法塔赫）中央委员会成员、对华关系专员阿巴斯·扎基说：“中国共产党全面从严治党的经验，是值得法塔赫借鉴、学习的成功模式，有助于巴勒斯坦发展。我们相信，在总书记领导下，中共全面从严治党的步伐不会停歇，中共将持续保持活力，这对中共和中国的未来至关重要。”（参与记者：王迪、陶军、王星桥、倪瑞捷、郑凯伦、马桂花、王晨笛、汪瑾、李欣莹、王小鹏、王慧娟、章建华、李莎、赵悦、杨媛媛）</p><p class="show_author">责任编辑：张岩</p><div class='wx-info'><span>新浪新闻公众号</span></div></div></div></div><p class="p_link">Copyright?1996-2018 SINA Corporation,All Rights Reserved版权所有</p></div>
+
+</body>
+</html>
